@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white">
+          <h2>Two-Way Data Binding</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="userInput" class="form-label">Enter Text:</label>
+            <input
+              type="text"
+              id="userInput"
+              class="form-control"
+              [(ngModel)]="userInput"
+              placeholder="Please type something"
+            />
+          </div>
+          <div class="alert alert-info" role="alert">
+            <strong>Input:</strong> {{ userInput }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

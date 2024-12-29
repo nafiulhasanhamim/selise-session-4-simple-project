@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">API Used: <a href="https://jsonplaceholder.typicode.com/posts" target="_blank">https://jsonplaceholder.typicode.com/posts</a> </h2>
+
+  <div *ngIf="loading" class="alert alert-info">
+    <strong>Loading...</strong> Please wait while we fetch data.
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    <strong>Error:</strong> {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!loading && !errorMessage">
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let post of posts">
+        <div class="card h-100">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title">{{ post.title }}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{ post.body }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

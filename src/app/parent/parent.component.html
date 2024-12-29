@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header text-center bg-primary text-white">
+          <h2>Parent Component</h2>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <p><strong>Message from Parent:</strong> {{ parentMessage }}</p>
+            <p><strong>Message from Child:</strong> {{ childMessage }}</p>
+            <app-child 
+              [parentMessage]="parentMessage"
+              (childMessage)="receiveMessage($event)">
+            </app-child>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
