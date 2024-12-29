@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-api',
@@ -14,13 +16,10 @@ export class ApiComponent implements OnInit {
   loading: boolean = true;
   errorMessage!: string;
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
-  // private apiUrl = `${environment.apiUrl}/posts?_limit=10`;
-
-  constructor(private apiService: ApiService) {}
+  constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.apiService.get(this.apiUrl).subscribe(
+    this.postService.allPost().subscribe(
       (data) => {
         this.posts = data;
         this.loading = false;
