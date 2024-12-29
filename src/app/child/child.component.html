@@ -4,15 +4,18 @@
       <div class="card shadow-sm">
         <div class="card-header text-center bg-secondary text-white">
           <h5>Child Component</h5>
+          <p>Message from Parent: {{ parentMessage }}</p>
         </div>
         <div class="card-body">
           <div class="mb-3">
-            <label for="userInput" class="form-label">Type a message for Parent:</label>
-            <input 
-              type="text" 
-              id="userInput" 
-              class="form-control" 
-              [(ngModel)]="userMessage" 
+            <label for="userInput" class="form-label"
+              >Type a message for Parent:</label
+            >
+            <input
+              type="text"
+              id="userInput"
+              class="form-control"
+              [(ngModel)]="userMessage"
               (ngModelChange)="sendMessage()"
               placeholder="Type here..."
             />
