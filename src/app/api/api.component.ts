@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-api',
@@ -14,7 +15,8 @@ export class ApiComponent implements OnInit {
   loading: boolean = true;
   errorMessage!: string;
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
+  // private apiUrl = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
+  private apiUrl = `${environment.apiUrl}/posts?_limit=10`;
 
   constructor(private apiService: ApiService) {}
 
